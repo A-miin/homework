@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 
     #my apps
     'to_do_list',
-    
+
 ]
 
 MIDDLEWARE = [
