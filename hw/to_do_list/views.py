@@ -31,3 +31,7 @@ def card_create(request):
 
         return render(request, 'index.html', {'cards':Card.objects.all()})
 
+def delete_card(request):
+    id = request.GET.get('id')
+    Card.objects.filter(id=id).delete()
+    return render(request, 'index.html', {'cards': Card.objects.all()})

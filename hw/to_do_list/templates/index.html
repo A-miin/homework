@@ -9,14 +9,20 @@
 <body>
     <div class="container mx-auto">
         <h1>To do List</h1>
+        <div class="d-flex flex-column">
         {% for card in cards %}
-            <p class="font-weight-bold h5">{{ card.description }}</p>
-            <button type="button" class="btn btn-success"><p>{{ card.status }}</p></button>
-            <button type="button" class="btn btn-light"><p>{{ card.date }}</p></button>
-
-            <hr>
+            <div class="card w-100 p-3" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title"> Card #{{ card.pk }}</h5>
+                <p class="card-text">{{ card.description }}</p>
+                <button type="button" class="btn btn-primary"><p>{{ card.status }}</p></button>
+                <button type="button" class="btn btn-light"><p>{{ card.date }}</p></button>
+                <a href="/delete?id={{ card.pk }}" class="btn btn-danger"><p> Delete</p></a>
+              </div>
+            </div>
         {% endfor %}
-        <a href="/new">New</a>
+        </div>
+        <a class="btn btn-info" href="/new">New</a>
     </div>
 </body>
 </html>
