@@ -8,3 +8,26 @@ def index(request):
         'cards':cards
     }
     return render(request, 'index.html', context)
+
+def card_create(request):
+    """
+    Представление для создания статьи
+    """
+    if request.method == "GET":  # Если метод запроса GET - будет отображена форма создания статьи
+        return render(request, 'create_card.html')
+    elif request.method == "POST":  # Если метод запроса POST - будет отображён шаблон просмотра деталей статьи
+        description = request.POST.get("description")
+        status = request.POST.get("status")
+        date = request.POST.get("date")
+        print(status)
+        print(date)
+        if date=="":
+            date=None
+        card = Card.objects.create(
+            description= description,
+            status=status,
+            date=date
+        )
+
+        return render(request, 'index.html', {'cards':Card.objects.all()})
+

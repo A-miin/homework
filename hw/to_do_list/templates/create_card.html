@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<h1>Create Card</h1>
+<form action="/new/" method="post">
+    {% csrf_token %}
+    <label>Description:</label><br/>
+    <input type="text" name="description"/><br/>
+    <br>
+    <label>Status:</label><br/>
+    <select name="status">
+      <option value="new">Новая</option>
+      <option value="in_progress">В процессе</option>
+      <option value="done">Сделано</option>
+    </select>
+    <br> <br>
+    <label>Date:</label><br/>
+    <input type="date"  name="date">
+    <br/>
+    <br/>
+    <input type="submit" value="Send"/>
+</form>
+</body>
+</html>
