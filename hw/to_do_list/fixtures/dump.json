@@ -1,0 +1,47 @@
+[
+{
+  "model": "to_do_list.card",
+  "pk": 1,
+  "fields": {
+    "description": "card 1",
+    "status": "in_progress",
+    "date": "2021-02-26"
+  }
+},
+{
+  "model": "to_do_list.card",
+  "pk": 2,
+  "fields": {
+    "description": "card 2",
+    "status": "done",
+    "date": "2021-02-18"
+  }
+},
+{
+  "model": "to_do_list.card",
+  "pk": 3,
+  "fields": {
+    "description": "card 3",
+    "status": "new",
+    "date": "2021-03-12"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$FHLFATEQ9f7K$FvZ9jhOrpBWiWFJdX9p7u2U8Lw8QiWzB4L/MYzxdH+E=",
+    "last_login": "2021-02-25T10:22:28.210Z",
+    "is_superuser": true,
+    "username": "1",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-02-25T10:22:03.403Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
