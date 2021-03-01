@@ -1,12 +1,10 @@
+{% extends 'base.html' %}
+
+{% block title %} List cards {% endblock title %}
+
+{% block content %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
-</head>
-<body>
+
     <div class="container mx-auto">
         <h1>To do List</h1>
         <div class="d-flex flex-column">
@@ -15,6 +13,7 @@
               <div class="card-body">
                 <h5 class="card-title"> Card #{{ card.pk }}</h5>
                 <p class="card-text">{{ card.name }}</p>
+                  <a href="{% url 'card-view' card.pk %}">View</a>
                 <button type="button" class="btn btn-primary"><p>{{ card.get_status_display }}</p></button>
                 <button type="button" class="btn btn-light"><p>{{ card.date }}</p></button>
                 <a href="/delete?id={{ card.pk }}" class="btn btn-danger"><p> Delete</p></a>
@@ -24,5 +23,4 @@
         </div>
         <a class="btn btn-info" href="/new">New</a>
     </div>
-</body>
-</html>
+{% endblock content %}

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %} View card {% endblock title %}
+
+{% block content %}
+{% load static %}
+    <h3>Name: {{ card.name }}</h3>
+    <p>Status: {{ card.status }}</p>
+    <p>Date: {{ card.date }}</p>
+    <p>Description: {{ card.description }}</p>
+{% endblock content %}
