@@ -40,7 +40,6 @@ def card_create(request):
         )
         return redirect('card-view', pk=card.id)
 
-def delete_card(request):
-    id = request.GET.get('id')
-    Card.objects.filter(id=id).delete()
+def delete_card(request, pk):
+    Card.objects.filter(id=pk).delete()
     return redirect('list')
