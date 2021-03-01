@@ -1,4 +1,7 @@
 from django.shortcuts import render
+from django.http import HttpResponseRedirect, HttpResponseNotFound
+from django.urls import reverse
+from django.shortcuts import get_object_or_404, redirect
 from .models import Card
 
 # Create your views here.
@@ -8,6 +11,12 @@ def index(request):
         'cards':cards
     }
     return render(request, 'index.html', context)
+
+def card_view(request, pk):
+    card = get_object_or_404(Card, pk=pk)
+
+    return render(request, 'card_view.html', context={'card': card})
+
 
 def card_create(request):
     """
