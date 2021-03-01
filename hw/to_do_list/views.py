@@ -22,7 +22,7 @@ def card_create(request):
         print(status)
         print(date)
         if date=="":
-            date=None
+            date='Дата не указана'
         card = Card.objects.create(
             description= description,
             status=status,
