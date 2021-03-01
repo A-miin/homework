@@ -1,29 +1,62 @@
 [
 {
   "model": "to_do_list.card",
-  "pk": 1,
+  "pk": 21,
   "fields": {
-    "description": "card 1",
+    "name": "card 1",
     "status": "in_progress",
-    "date": "2021-02-26"
+    "date": "2021-02-26",
+    "description": "some description /// 1"
   }
 },
 {
   "model": "to_do_list.card",
-  "pk": 2,
+  "pk": 22,
   "fields": {
-    "description": "card 2",
+    "name": "card 22",
     "status": "done",
-    "date": "2021-02-18"
+    "date": "2021-02-18",
+    "description": "some description /// 22"
   }
 },
 {
   "model": "to_do_list.card",
-  "pk": 3,
+  "pk": 27,
   "fields": {
-    "description": "card 3",
-    "status": "new",
-    "date": "2021-03-12"
+    "name": "Амин",
+    "status": "in_progress",
+    "date": null,
+    "description": null
+  }
+},
+{
+  "model": "to_do_list.card",
+  "pk": 28,
+  "fields": {
+    "name": "Амин",
+    "status": "done",
+    "date": "2021-03-26",
+    "description": "lknlnnlknm"
+  }
+},
+{
+  "model": "to_do_list.card",
+  "pk": 29,
+  "fields": {
+    "name": "heyee",
+    "status": "in_progress",
+    "date": "2021-03-19",
+    "description": ",k,l;k,'"
+  }
+},
+{
+  "model": "to_do_list.card",
+  "pk": 30,
+  "fields": {
+    "name": "heyee",
+    "status": "done",
+    "date": "2021-03-05",
+    "description": ";kmjlkmgs"
   }
 },
 {
@@ -31,7 +64,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$216000$FHLFATEQ9f7K$FvZ9jhOrpBWiWFJdX9p7u2U8Lw8QiWzB4L/MYzxdH+E=",
-    "last_login": "2021-02-25T10:22:28.210Z",
+    "last_login": "2021-03-01T10:27:09.828Z",
     "is_superuser": true,
     "username": "1",
     "first_name": "",
@@ -40,6 +73,24 @@
     "is_staff": true,
     "is_active": true,
     "date_joined": "2021-02-25T10:22:03.403Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$216000$7blIreWMp9KE$nDDIqmQRxyDkldzdz/zEqEnQ0rl2xVMOKOillYc3DSc=",
+    "last_login": "2021-02-25T12:48:53.992Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2021-02-25T12:48:03.117Z",
     "groups": [],
     "user_permissions": []
   }
