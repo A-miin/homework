@@ -8,7 +8,7 @@ class CardAdmin(admin.ModelAdmin):
     list_display = ['id', 'description', 'status', 'date']
     list_filter = [ 'description', 'status', 'date']
     search_fields = [ 'description', 'status', 'date']
-    fields = [ 'description', 'status', 'date']
+    fields = [ 'description', 'status', 'date','more_description']
     readonly_fields = []
 
 
