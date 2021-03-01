@@ -14,7 +14,6 @@ def index(request):
 
 def card_view(request, pk):
     card = get_object_or_404(Card, pk=pk)
-
     return render(request, 'card_view.html', context={'card': card})
 
 
@@ -28,19 +27,20 @@ def card_create(request):
         name = request.POST.get("name")
         status = request.POST.get("status")
         date = request.POST.get("date")
-        print(status)
-        print(date)
+        description = request.POST.get('description')
         if date=="":
-            date='Дата не указана'
+            date=None
+        if description=="":
+            description=None
         card = Card.objects.create(
             name= name,
             status=status,
-            date=date
+            date=date,
+            description = description,
         )
-
-        return render(request, 'index.html', {'cards':Card.objects.all()})
+        return redirect('card-view', pk=card.id)
 
 def delete_card(request):
     id = request.GET.get('id')
     Card.objects.filter(id=id).delete()
-    return render(request, 'index.html', {'cards': Card.objects.all()})
+    return redirect('list')

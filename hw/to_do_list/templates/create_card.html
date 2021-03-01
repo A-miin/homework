@@ -6,7 +6,7 @@
 {% load static %}
 
 <h1>Create Card</h1>
-<form action="/new/" method="post">
+<form action="{% url 'new'%}" method="post">
     {% csrf_token %}
     <label>Name:</label><br/>
     <input type="text" name="name"/><br/>
@@ -20,6 +20,9 @@
     <br> <br>
     <label>Date:</label><br/>
     <input type="date"  name="date">
+    <br/><br/>
+    <label>Description:</label><br/>
+    <textarea class="form-control" name="description"></textarea>
     <br/>
     <br/>
     <input type="submit" value="Send"/>

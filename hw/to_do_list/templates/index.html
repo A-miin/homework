@@ -15,7 +15,12 @@
                 <p class="card-text">{{ card.name }}</p>
                   <a href="{% url 'card-view' card.pk %}">View</a>
                 <button type="button" class="btn btn-primary"><p>{{ card.get_status_display }}</p></button>
-                <button type="button" class="btn btn-light"><p>{{ card.date }}</p></button>
+                {% if card.date %}
+                    <button type="button" class="btn btn-light"><p>{{ card.date }}</p></button>
+                {% else %}
+                    <button type="button" class="btn btn-light"><p>Не указано</p></button>
+                {% endif %}
+
                 <a href="/delete?id={{ card.pk }}" class="btn btn-danger"><p> Delete</p></a>
               </div>
             </div>
