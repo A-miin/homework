@@ -8,8 +8,8 @@
 <h1>Create Card</h1>
 <form action="/new/" method="post">
     {% csrf_token %}
-    <label>Description:</label><br/>
-    <input type="text" name="description"/><br/>
+    <label>Name:</label><br/>
+    <input type="text" name="name"/><br/>
     <br>
     <label>Status:</label><br/>
     <select name="status">

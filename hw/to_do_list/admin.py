@@ -5,10 +5,10 @@ from .models import Card
 
 
 class CardAdmin(admin.ModelAdmin):
-    list_display = ['id', 'description', 'status', 'date']
-    list_filter = [ 'description', 'status', 'date']
-    search_fields = [ 'description', 'status', 'date']
-    fields = [ 'description', 'status', 'date','more_description']
+    list_display = ['id', 'name', 'status', 'date']
+    list_filter = [ 'name', 'status', 'date']
+    search_fields = [ 'name', 'status', 'date']
+    fields = [ 'name', 'status', 'date','description']
     readonly_fields = []
 
 

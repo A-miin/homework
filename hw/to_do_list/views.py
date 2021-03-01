@@ -16,7 +16,7 @@ def card_create(request):
     if request.method == "GET":  # Если метод запроса GET - будет отображена форма создания статьи
         return render(request, 'create_card.html')
     elif request.method == "POST":  # Если метод запроса POST - будет отображён шаблон просмотра деталей статьи
-        description = request.POST.get("description")
+        name = request.POST.get("name")
         status = request.POST.get("status")
         date = request.POST.get("date")
         print(status)
@@ -24,7 +24,7 @@ def card_create(request):
         if date=="":
             date='Дата не указана'
         card = Card.objects.create(
-            description= description,
+            name= name,
             status=status,
             date=date
         )

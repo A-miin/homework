@@ -14,7 +14,7 @@
             <div class="card w-100 p-3" style="width: 18rem;">
               <div class="card-body">
                 <h5 class="card-title"> Card #{{ card.pk }}</h5>
-                <p class="card-text">{{ card.description }}</p>
+                <p class="card-text">{{ card.name }}</p>
                 <button type="button" class="btn btn-primary"><p>{{ card.get_status_display }}</p></button>
                 <button type="button" class="btn btn-light"><p>{{ card.date }}</p></button>
                 <a href="/delete?id={{ card.pk }}" class="btn btn-danger"><p> Delete</p></a>
