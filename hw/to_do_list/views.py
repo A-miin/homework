@@ -1,6 +1,4 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect, HttpResponseNotFound
-from django.urls import reverse
 from django.shortcuts import get_object_or_404, redirect
 from .models import Card
 
@@ -15,7 +13,6 @@ def index(request):
 def card_view(request, pk):
     card = get_object_or_404(Card, pk=pk)
     return render(request, 'card_view.html', context={'card': card})
-
 
 def card_create(request):
     """
@@ -41,10 +38,8 @@ def card_create(request):
         return redirect('card-view', pk=card.id)
 
 def card_delete(request, pk):
-    card = Card.objects.filter(id=pk)
-    if request.method.GET:
-        return render(request,'card_delete.html',card)
-
+    card = get_object_or_404(Card, id=pk)
+    card.delete()
     return redirect('list')
 
 def card_update(request, pk):

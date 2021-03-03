@@ -6,7 +6,7 @@
 {% load static %}
 
 <h1>Update Card</h1>
-<form action="{% url 'new'%}" method="post">
+<form action="{% url 'card-update' card.id%}" method="post">
     {% csrf_token %}
     <label>Name:</label><br/>
     <input type="text" name="name" value="{{ card.name }}"/><br/>

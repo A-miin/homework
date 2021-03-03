@@ -11,7 +11,7 @@ from .views import (
 urlpatterns = [
     path('', index,name='list'),  # URL для отображения списка статей
     path('new/', card_create, name='new'),
-    path('delete/<int:pk>', card_delete, name='card-delete' ),
+    path('card/<int:pk>/delete', card_delete, name='card-delete' ),
     path('card/<int:pk>/', card_view, name='card-view'),
     path('card/<int:pk>/edit', card_update, name='card-update'),
 ]
