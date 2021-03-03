@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 
 {% block title %} View card {% endblock title %}
-
+{% block nav %}
+    <li class="nav-item">
+            <a class="nav-link" href="{% url "card-update" card.id %}">Update</a>
+    </li>
+    <li class="nav-item">
+            <a class="nav-link" href="{% url "card-delete" card.id %}">Delete</a>
+    </li>
+{% endblock nav %}
 {% block content %}
 {% load static %}
     <h3>Name: {{ card.name }}</h3>

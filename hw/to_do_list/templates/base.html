@@ -8,7 +8,18 @@
 </head>
 <body>
     <div class="container">
-        {% include 'nav.html' %}
+        <nav>
+        <ul class="nav justify-content-center">
+          <li class="nav-item">
+            <a class="nav-link active" href="{% url "list" %}">List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url "new" %}">New</a>
+          </li>
+            {% block nav %}
+            {% endblock nav %}
+        </ul>
+        </nav>
         {% block content %}
         {% endblock %}
     </div>

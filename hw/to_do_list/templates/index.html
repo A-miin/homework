@@ -20,8 +20,6 @@
                 {% else %}
                     <button type="button" class="btn btn-light"><p>Не указано</p></button>
                 {% endif %}
-
-                <a href="{% url 'delete' card.pk %}" class="btn btn-danger"><p> Delete</p></a>
               </div>
             </div>
         {% endfor %}
