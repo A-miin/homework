@@ -6,7 +6,7 @@ class Card(models.Model):
     name = models.CharField(max_length=255, null=False, blank=False)
     status = models.CharField(max_length=32, null=False, blank=False, choices=status_choices, default='new')
     date = models.DateField(null=True, blank=True)
-    description = models.TextField(max_length=1024, null=True)
+    description = models.TextField(max_length=1024, null=True, blank=True)
 
     class Meta:
         db_table = 'cards'
