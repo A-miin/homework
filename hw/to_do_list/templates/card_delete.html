@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} List cards {% endblock title %}
+
+{% block content %}
+{% load static %}
+    <div class="container text-center">
+        <h3 class="mt-4 mb-4">Are you sure you want to delete article {{ card.name }}?</h3>
+        <form action="{% url 'card-delete' card.pk%}" method="post">
+            {% csrf_token %}
+            <input type="submit" name="action" value="No"  class="btn btn-outline-info"  />
+            <input type="submit" name="action" value="Yes" class="btn btn-outline-danger"/>
+        </form>
+    </div>
+{% endblock content %}

@@ -39,7 +39,13 @@ def card_create(request):
 
 def card_delete(request, pk):
     card = get_object_or_404(Card, id=pk)
-    card.delete()
+    if request.method=='GET':
+        return render(request, 'card_delete.html', {'card':card})
+    elif request.method =='POST':
+        if request.POST['action']=='Yes':
+            card.delete()
+        else:
+            return redirect('card-view', pk=card.id)
     return redirect('list')
 
 def card_update(request, pk):
