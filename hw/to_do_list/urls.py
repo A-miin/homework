@@ -6,6 +6,7 @@ from .views import (
                     card_delete,
                     card_view,
                     card_update,
+                    bulk_delete,
                 )
 
 urlpatterns = [
@@ -14,5 +15,6 @@ urlpatterns = [
     path('card/<int:pk>/delete', card_delete, name='card-delete' ),
     path('card/<int:pk>/', card_view, name='card-view'),
     path('card/<int:pk>/edit', card_update, name='card-update'),
+    path('bulk-delete',bulk_delete, name='bulk-delete' ),
 ]
 

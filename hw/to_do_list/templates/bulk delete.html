@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block title %} List cards {% endblock title %}
+
+{% block content %}
+{% load static %}
+<h1>Bulk delete</h1>
+    я старалась, работает один раз(
+    <form action="{% url "bulk-delete" %}" method="post">
+        {% include "form.html" with button_text="Delete" %}
+    </form>
+{% endblock content %}

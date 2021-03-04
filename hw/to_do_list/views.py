@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, redirect
 from .models import Card
-from .forms import CardForm
+from .forms import CardForm,SimpleForm,update_list
 
 # Create your views here.
 def index(request):
@@ -66,3 +66,17 @@ def card_update(request, pk):
             card.save()
             return redirect('card-view', pk=card.id)
         return render(request, 'card_update.html', {'card':card, 'form': form})
+
+def bulk_delete(request):
+    update_list()
+    cards = Card.objects.all()
+    if request.method=='GET':
+        form = SimpleForm()
+        return render(request, 'bulk delete.html', {'cards':cards, 'form':form})
+    elif request.method=='POST':
+        res = request.POST.getlist('favorite_colors')
+        for pk in res:
+            card = get_object_or_404(Card, id=int(pk))
+            card.delete()
+    # update_list()
+    return redirect('list')
